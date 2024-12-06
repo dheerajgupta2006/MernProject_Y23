@@ -1,0 +1,105 @@
+.product-display {
+    display: flex; /* Use flexbox for layout */
+    padding: 20px; /* Add some padding around the component */
+    background-color: #f5f9f5; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.product-display-left {
+    flex: 1; /* Left side takes 1 part of the flex space */
+    max-width: 400px; /* Set a maximum width */
+    margin-right: 20px; /* Space between left and right */
+}
+
+.product-display-img-list {
+    display: flex; /* Align images horizontally */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    margin-bottom: 10px; /* Space below thumbnail list */
+}
+
+.product-display-img-list img {
+    width: 70px; /* Thumbnail width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between thumbnails */
+    cursor: pointer; /* Change cursor to pointer */
+    border-radius: 4px; /* Rounded corners for thumbnails */
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.product-display-img-list img:hover {
+    transform: scale(1.1); /* Scale up thumbnail on hover */
+}
+
+.product-display-img {
+    display: flex; /* Flexbox for main image */
+    justify-content: center; /* Center the main image */
+}
+
+.product-display-main-img {
+    width: 100%; /* Fill container */
+    max-width: 400px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for main image */
+}
+
+.product-display-right {
+    flex: 2; /* Right side takes more space */
+}
+
+.product-display-right-star {
+    display: flex; /* Align stars horizontally */
+    align-items: center; /* Center vertically */
+    margin: 10px 0; /* Space above and below */
+}
+
+.product-display-right-prices {
+    margin: 10px 0; /* Space above and below prices */
+}
+
+.product-display-right-price-old {
+    text-decoration: line-through; /* Strikethrough for old price */
+    color: #999; /* Grey color for old price */
+    margin-right: 10px; /* Space between prices */
+}
+
+.product-display-right-price-new {
+    font-weight: bold; /* Make new price bold */
+    color: #2a9d8f; /* Green color for new price */
+}
+
+.product-display-right-size {
+    margin: 10px 0; /* Space above and below size selection */
+}
+
+.size-options {
+    display: flex; /* Align size options horizontally */
+    gap: 10px; /* Space between size options */
+}
+
+.size-options div {
+    padding: 10px; /* Space inside size options */
+    border: 1px solid #2a9d8f; /* Border for size options */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.2s; /* Smooth hover effect */
+}
+
+.size-options div:hover {
+    background-color: #2a9d8f; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+.add-to-cart-button {
+    background-color: #2a9d8f; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding around text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.2s; /* Smooth hover effect */
+}
+
+.add-to-cart-button:hover {
+    background-color: #21867a; /* Darken button on hover */
+}
