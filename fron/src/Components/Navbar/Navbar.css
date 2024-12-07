@@ -14,10 +14,6 @@
     font-size: 38px;
     font-weight: 600;
 }
-.nav-logo img{
-    height:45px;
-    width: 45px;
-}
  .nav-menu{
     display: flex;
     align-items: center;
@@ -75,4 +71,7 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+.logo-design{
+    height: 13vh;
 }

@@ -1,6 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bcrypt = require('bcryptjs'); // To hash passwords
+const dotenv = require('dotenv');  // For managing environment variables
+
+// Initialize dotenv
+dotenv.config();
 
 // Initialize Express app
 const app = express();
@@ -9,8 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// MongoDB URI
-const mongoURI = 'mongodb+srv://allamsirish6:Asirish2006@cluster0.0naos.mongodb.net/myDatabaseName'; // Replace `myDatabaseName` with your database name
+// MongoDB URI (use environment variables for security)
+const mongoURI = process.env.MONGO_URI || 'mongodb+srv://allamsirish6:Asirish2006@cluster0.0naos.mongodb.net/myDatabaseName';
 
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -27,12 +32,21 @@ const productSchema = new mongoose.Schema({
 });
 const Product = mongoose.model('Product', productSchema);
 
-// User Schema
+// User Schema (with password hashing)
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, unique: true },
   password: String,
 });
+
+// Hash password before saving user
+userSchema.pre('save', async function(next) {
+  if (this.isModified('password') || this.isNew) {
+    this.password = await bcrypt.hash(this.password, 10);  // 10 rounds of salt
+  }
+  next();
+});
+
 const User = mongoose.model('User', userSchema);
 
 // Cart Schema
@@ -75,9 +89,9 @@ app.post('/api/products', async (req, res) => {
 // User registration
 app.post('/api/users/register', async (req, res) => {
   const { name, email, password } = req.body;
-  const newUser = new User({ name, email, password });
 
   try {
+    const newUser = new User({ name, email, password });
     const user = await newUser.save();
     res.status(201).json(user);
   } catch (err) {
@@ -90,8 +104,8 @@ app.post('/api/users/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email, password });
-    if (user) {
+    const user = await User.findOne({ email });
+    if (user && await bcrypt.compare(password, user.password)) {
       res.json(user);
     } else {
       res.status(401).json({ message: 'Invalid credentials' });
@@ -133,7 +147,7 @@ app.post('/api/cart/:userId', async (req, res) => {
 });
 
 // Start the server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

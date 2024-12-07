@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './CardDetailsPage.css';
 
 const CardDetailsPage = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [cvv, setCvv] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
+  const navigate = useNavigate(); // Initialize navigation
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission logic here, such as saving the card details or proceeding to payment
-    alert('Card details submitted!');
+
+    // Basic validation logic
+    if (cardNumber.length === 16 && cvv.length === 3 && expiryDate.match(/^\d{2}\/\d{2}$/)) {
+      navigate('/payment-success'); // Redirect to success page
+    } else {
+      alert('Please enter valid card details.');
+    }
   };
 
   return (
@@ -49,7 +56,9 @@ const CardDetailsPage = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Submit Payment</button>
+        <button type="submit" className="submit-button">
+          Submit Payment
+        </button>
       </form>
     </div>
   );

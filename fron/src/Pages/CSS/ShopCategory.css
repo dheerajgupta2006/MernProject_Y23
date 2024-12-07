@@ -2,8 +2,8 @@
 .shop-category {
     width: 100%;
     padding: 20px; /* Add padding for better spacing */
-    background-color:rgba(44, 62, 80, 0.9);;/* Dark background with transparency */
     overflow: hidden; /* Prevent overflow */
+    background-color: #f5f7fa; /* Light pastel background for the webpage */
 }
 
 /* Banner container */
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
-    margin: -20px -20px 20px -20px;/* Space below banner */
+    margin: -20px -20px 20px -20px; /* Space below banner */
     padding: 0; /* Ensure no padding is added */
 }
 
@@ -24,7 +24,6 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px; /* Add rounded corners to the banner */
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2); /* Green shadow */
 }
 
 /* Index and sort section */
@@ -32,7 +31,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    color: white;
+    color: #4a4a4a; /* Neutral gray color */
     margin-bottom: 20px;
 }
 
@@ -40,7 +39,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
-    color:white; /* Light color for contrast on dark background */
+    color: #4a4a4a; /* Neutral gray for contrast */
 }
 
 .shopcategory-sort img {
@@ -49,86 +48,57 @@
     margin-left: 8px;
     border-radius: 3px;
     background-color: azure;
-    
 }
 
 /* Products grid */
 .shopcategory-products {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 products per row */
-    gap: 20px 20px; /* Reduced space between items */
-    padding: 0; /* Remove horizontal padding */
+    grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+    row-gap: 30px; /* Vertical spacing between rows */
+    column-gap: 30px; /* Vertical gaps between columns */
+    padding: 20px;
+    background-color: #ffefd5; /* Light peach background for product section */
 }
 
 /* Individual product item styling */
 .item {
-    background-color: rgba(232, 245, 233, 0.5); /* Slight green tint with transparency */
-    border: 1px solid rgba(220, 237, 200, 0.9); /* Light green border with transparency */
+    background-color: #fdfd96; /* Vibrant pastel yellow */
+    border: 1px solid #fbc02d; /* Golden yellow border */
     border-radius: 10px;
-    height: 240px;
-    width: 230px;
-    padding: 2px;
+    height: 300px; /* Adjusted height */
+    width: 100%; /* Let the width adapt to the grid */
+    padding: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden; /* Prevent overflow for images */
 }
 
-.item:hover {
-    transform: scale(1.08); /* Increase the zoom on hover */
-    box-shadow: 0 16px 32px rgba(0, 255, 0, 1); /* Stronger, more visible green shadow */
-}
-
-
 .item img {
     display: inline-block;
-    width: 160px;
-    height: 140px; /* Adjusted height for product image */
+    width: 180px; /* Adjusted width */
+    height: 160px; /* Adjusted height */
     object-fit: contain; /* Keep aspect ratio */
-    margin-bottom: 1px;
+    margin-bottom: 10px;
 }
 
 .item-name {
-    font-size: 14px; /* Adjust font size for names */
+    font-size: 16px; /* Font size for names */
     font-weight: bold;
-    color: #2c662d; /* Dark green text */
-    margin-bottom: 2px;
+    color: #0d480e; /* Dark green text */
+    margin-bottom: 8px;
 }
 
 .item-price {
-    color: #4caf50; /* Green price */
+    color: #1976d2; /* Bright blue for price text */
 }
 
 .old-price {
     text-decoration: line-through;
-    color: green/* Lighter green for old price with transparency */
+    color: #c62828; /* Vibrant red for old price */
 }
 
 .new-price {
-    font-size: 16px; /* Adjusted font size for new price */
-    color: #1b5e20; /* Darker green for new price */
+    font-size: 18px; /* Font size for new price */
+    color: #2e7d32; /* Rich green for new price */
     font-weight: bold;
-}
-
-
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .shopcategory-products {
-        grid-template-columns: repeat(3, 1fr); /* 3 per row on medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .shopcategory-products {
-        grid-template-columns: repeat(2, 1fr); /* 2 per row on small screens */
-    }
-
-    .banner-container {
-        height: 200px; /* Adjust height for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .shopcategory-products {
-        grid-template-columns: 1fr; /* 1 per row on extra small screens */
-    }
 }

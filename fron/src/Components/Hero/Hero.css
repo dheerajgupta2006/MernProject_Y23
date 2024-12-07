@@ -1,7 +1,9 @@
 .hero {
     height: 100vh;
-    background: linear-gradient(180deg, #b6fc03, #e1ffea22 60%);
+    background-image: linear-gradient(to right, #2c3e50, #34495e); /* Professional deep blue to dark gray gradient */
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-left {
@@ -12,18 +14,14 @@
     gap: 20px;
     padding-left: 180px;
     line-height: 1.1;
-}
-
-.hero-left h2 {
-    color: #090909;
-    font-size: 24px;
-    font-weight: 600;
+    color: white; /* White text for good contrast */
 }
 
 .hero-left p {
-    color: #171717;
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 50px; /* Adjusted size */
+    font-weight: bold;
+    color: #ecf0f1; /* Lighter text for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for clarity */
 }
 
 .hero-hand-icon {
@@ -37,15 +35,6 @@
     width: 50px;
 }
 
-.log {
-    height: 55px;
-    width: 55px;
-    border-radius: 50%;
-    border: 2px solid lightgreen;
-    background-image: url("../Assets/logo.jpg"); /* Adjust path */
-    background-size: cover;
-}
-
 .hero-latest-btn {
     display: flex;
     justify-content: center;
@@ -55,10 +44,15 @@
     height: 70px;
     border-radius: 75px;
     margin-top: 30px;
-    background: lightseagreen;
+    background: #16a085; /* Professional teal background */
     color: white;
     font-size: 17px;
     font-weight: 500;
+    transition: background 0.3s ease-in-out;
+}
+
+.hero-latest-btn:hover {
+    background: #1abc9c; /* Slightly lighter teal on hover */
 }
 
 .hero-right {
@@ -77,10 +71,6 @@
     transform-style: preserve-3d; /* 3D effect */
 }
 
-.flip-card:hover {
-    transform: rotateY(180deg); /* Flip effect on hover */
-}
-
 .card-front,
 .card-back {
     position: absolute;
@@ -92,18 +82,25 @@
 }
 
 .card-front {
-    background-image: url("../Assets/hero_image.jpg"); /* Adjust path */
-    /* Glow effect when hovering over the front */
-    box-shadow: 0 0 10px yellow, 0 0 20px green, 0 0 30px yellow; /* Add glow effect */
+    background-image: url("https://i.pinimg.com/originals/41/7f/b3/417fb3dc5a6454419abaf53657a7fd8b.jpg"); /* Adjust path */
+    /* Optional: Subtle glow effect when hovering over the front */
 }
 
 .card-back {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #b6fc03, #e1ffea22 60%);
-    color: #171717;
+    background: linear-gradient(180deg, #2980b9, #34495e 60%); /* Blue gradient */
+    color: #ecf0f1; /* Lighter text color for readability */
     font-size: 24px;
     font-weight: 700;
     transform: rotateY(180deg); /* Rotate back side */
+}
+
+.heading-hero {
+    font-size: 50px;
+}
+
+.heading-hero-e-kart {
+    font-size: 80px;
 }
