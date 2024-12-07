@@ -40,6 +40,10 @@ const Navbar = () => {
           <Link style={{ textDecoration: 'none' }} to='/irrigation'>Irrigation</Link>
           {menu === "irrigation" ? <hr /> : <></>}
         </li>
+        <li onClick={() => setMenu("Chatbot")}>
+          <Link style={{ textDecoration: 'none' }} to='/Chatbot'>CHAT BOT</Link>
+          {menu === "Chatbot" ? <hr /> : <></>}
+        </li>
       </ul>
       <div className="nav-login-cart">
         {/* If user is logged in, show Logout button */}

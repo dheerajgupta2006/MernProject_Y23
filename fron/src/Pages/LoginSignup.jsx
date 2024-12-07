@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Ensure that you use react-router-dom to navigate
+import { useNavigate } from 'react-router-dom'; // For navigation
 import './CSS/LoginSignup.css';
-import dummyData from '../data/dummyData.json'; // Import the dummy data from the JSON file
+import dummyData from '../data/dummyData.json'; // Import dummy data
 
 const LoginSignup = () => {
   const [email, setEmail] = useState('');
@@ -54,7 +54,7 @@ const LoginSignup = () => {
         <button onClick={handleSubmit}>Login</button>
 
         <p className="loginsignup-login">
-          Don't have an account? <span>Sign up here</span>
+          Don't have an account? <span onClick={() => navigate('/signup')}>Sign up here</span>
         </p>
       </div>
     </div>

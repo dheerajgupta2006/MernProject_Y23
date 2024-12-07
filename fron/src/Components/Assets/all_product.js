@@ -43,6 +43,7 @@ let all_product = [
     image: "https://media.istockphoto.com/id/1308275817/photo/close-up-of-organic-yellow-corn-seed-or-maize-full-frame-background.jpg?s=612x612&w=0&k=20&c=W0hNlejbZQ41HMPd8j5IsDuS8B96JO9plGFtqsuZEd0=",
     new_price: 50.0,
     old_price: 80.5,
+   description: "Premium quality sweetcorn seeds for high-yield farming. Perfect for home gardens and commercial cultivation."
   },
   {
     id: 2,

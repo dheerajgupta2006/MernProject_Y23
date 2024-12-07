@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import CheckoutPage from './Pages/CheckoutPage'; // Import the Checkout Page
 import CardDetailsPage from './Pages/CardDetailsPage'; // Import the Card Details Page
 import PaymentDonePage from './Pages/PaymentDonePage'; // Import the Payment Done Page
-
+import Chatbot from './Components/Chatbot';
 // Import CSS files for the pages
 import './Pages/CheckoutPage.css'; // Import CSS for CheckoutPage
 import './Pages/CardDetailsPage.css'; // Import CSS for CardDetailsPage
@@ -32,6 +32,8 @@ function App() {
           <Route path="/card-details" element={<CardDetailsPage />} /> {/* Card Details page */}
           <Route path="/payment-success" element={<PaymentDonePage />} /> {/* Payment Done page */}
           <Route path="/login" element={<LoginSignup />} />
+          <Route path="/chatbot" element={<Chatbot/>} />
+
         </Routes>
         <Footer />
       </BrowserRouter>
